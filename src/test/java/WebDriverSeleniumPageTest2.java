@@ -10,11 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WebDriverSeleniumPageTest2 {
-    private static WebDriverSeleniumHomePage webDriver=new WebDriverSeleniumHomePage();
+    private static WebDriverSeleniumHomePage webDriver=new WebDriverSeleniumHomePage(new ChromeDriver());
     private static WebDriverSeleniumNewPage newPage;
 
     @BeforeAll
-    public static void webDriverLoad() throws InterruptedException {
+    public static void makeNewPaste() throws InterruptedException {
 
         newPage=webDriver.pageOpen().pasteCode().turnOnHighLighting().pasteExpiration().pasteName().createNewPaste();
     }

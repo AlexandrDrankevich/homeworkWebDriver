@@ -12,8 +12,8 @@ public class WebDriverSeleniumHomePage extends WebDriverSeleniumAbstractPage{
     private String name = "how to gain dominance among developers";
 
 
-    public WebDriverSeleniumHomePage() {
-        super();
+    public WebDriverSeleniumHomePage(WebDriver webDriver) {
+        super(webDriver);
     }
 
     @FindBy(xpath = "//textarea[@id='postform-text']")
@@ -69,7 +69,7 @@ public class WebDriverSeleniumHomePage extends WebDriverSeleniumAbstractPage{
 
     public WebDriverSeleniumNewPage createNewPaste() {
         createNewPaste.click();
-        return new WebDriverSeleniumNewPage();
+        return new WebDriverSeleniumNewPage(webDriver);
     }
 
 

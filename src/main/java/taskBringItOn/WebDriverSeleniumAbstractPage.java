@@ -11,8 +11,8 @@ public class WebDriverSeleniumAbstractPage {
             "git reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\n" +
             "git push origin master --force";
 
-    public WebDriverSeleniumAbstractPage() {
-        this.webDriver = new ChromeDriver();
+    public WebDriverSeleniumAbstractPage(WebDriver webDriver) {
+        this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
 
