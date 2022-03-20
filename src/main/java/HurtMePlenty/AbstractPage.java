@@ -31,6 +31,14 @@ public class AbstractPage {
     public WebElement waitForElementClickable(WebElement webElement){
         return new WebDriverWait(webDriver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(webElement));
     }
+    public boolean isFieldMatchedToEntered(String value, WebElement field){
+        if( field.getText().contains(value)){
+            return true;
+        }
+        return false;
+
+
+    }
 
 
 }

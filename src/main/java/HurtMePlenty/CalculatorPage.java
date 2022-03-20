@@ -116,9 +116,10 @@ public class CalculatorPage extends AbstractPage{
         waitForElementVisible(committedUsage).click();
         return this;
     }
-    public CalculatorPage clickOnButtonAddToEstimate(){
+    public EstimatePage clickOnButtonAddToEstimate() throws InterruptedException {
+        Thread.sleep(3000);
         buttonAddToEstimate.click();
-        return this;
+        return new EstimatePage(webDriver);
     }
 
 
