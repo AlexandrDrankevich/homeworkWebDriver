@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,10 +18,12 @@ public class WebDriverSeleniumPageTest2 {
     public static void makeNewPaste() throws InterruptedException {
 
         newPage=webDriver.pageOpen().pasteCode().turnOnHighLighting().pasteExpiration().pasteName().createNewPaste();
+        Thread.sleep(3000);
     }
 
     @Test
     public void testTitleContent() {
+
 
         assertEquals("how to gain dominance among developers - Pastebin.com", newPage.searchTitleName(),
                 "title is not equals expected");
@@ -29,13 +32,13 @@ public class WebDriverSeleniumPageTest2 {
     @Test
     public void testSyntaxHighlightingChoice() throws InterruptedException {
         assertTrue(newPage.SyntaxHighlighting(), "Choise of Syntax Highlighting is not equals Bash");
-        Thread.sleep(3000);
+
     }
 
 
     @AfterAll
     public static void tearDown() throws InterruptedException {
-        webDriver.tearDown();
+       // webDriver.tearDown();
 
 
     }

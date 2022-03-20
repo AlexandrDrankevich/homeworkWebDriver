@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.support.FindBy;
 
+import java.time.Duration;
+
 public class HomePage extends AbstractPage {
 
     public HomePage(WebDriver webDriver) {
@@ -21,7 +23,7 @@ public class HomePage extends AbstractPage {
 
 
 
-    public HomePage pageOpen() {
+    public HomePage pageOpen() throws InterruptedException {
         webDriver.get(url);
         return this;
     }
