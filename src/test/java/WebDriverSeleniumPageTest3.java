@@ -4,8 +4,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class WebDriverSeleniumPageTest3 {
     private static HomePage homePage = new HomePage(new ChromeDriver());
@@ -22,12 +21,13 @@ public class WebDriverSeleniumPageTest3 {
                 .LocalSsdSelect().dataCenterLocationSelect()
                 .committedUsageSelect()
                 .clickOnButtonAddToEstimate();
-        assertTrue(estimatePage.isVmClassMatchedValue("regular"));
-        assertTrue(estimatePage.isInstanceTypeMatchedValue("n1-standard-8"));
-        assertTrue(estimatePage.isRegionMatchedValue("Frankfurt"));
-        assertTrue(estimatePage.isLocalSSDMatchedValue("2x375 GiB"));
-        assertTrue(estimatePage.isCommitmentTermMatchedValue("1 Year"));
-
+assertAll(
+        ()-> assertTrue(estimatePage.isVmClassMatchedValue("regular"),"VmClass value is not equals regular"),
+        ()->  assertTrue(estimatePage.isInstanceTypeMatchedValue("n1-standard-8"),"InstanceType value is not equals n1-standard-8"),
+        ()->  assertTrue(estimatePage.isRegionMatchedValue("Frankfurt"),"Region value is not equals Frankfurt"),
+        ()-> assertTrue(estimatePage.isLocalSSDMatchedValue("2x375 GiB"),"LocalSSD value is not equals 2x375 GiB"),
+        ()->  assertTrue(estimatePage.isCommitmentTermMatchedValue("1 Year"),"CommitmentTerm value is not equals 1 Year")
+);
     }
 
     @AfterAll
