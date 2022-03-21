@@ -1,12 +1,12 @@
-import HurtMePlenty.EstimatePage;
-import HurtMePlenty.HomePage;
+import taskHurtMePlenty.EstimatePage;
+import taskHurtMePlenty.HomePage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class WebDriverSeleniumPageTest3 {
+public class HurtMePlentyTest {
     private static HomePage homePage = new HomePage(new ChromeDriver());
 
     @Test

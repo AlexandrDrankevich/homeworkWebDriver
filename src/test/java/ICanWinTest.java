@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import taskICanWin.WebDriverSeleniumPage1;
 
-public class WebDriverSeleniumPageTest1 {
+public class ICanWinTest {
     private static WebDriverSeleniumPage1 webDriver;
     private static WebDriver driver = new ChromeDriver();
 
@@ -15,9 +15,8 @@ public class WebDriverSeleniumPageTest1 {
     }
 
     @Test
-    public void testWebPage() throws InterruptedException {
+    public void testWebPage() {
         webDriver.pageOpen().pasteCode().pasteExpiration().pasteName();
-        Thread.sleep(3000);
     }
 
     @AfterAll

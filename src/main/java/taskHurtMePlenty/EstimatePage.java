@@ -1,4 +1,4 @@
-package HurtMePlenty;
+package taskHurtMePlenty;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

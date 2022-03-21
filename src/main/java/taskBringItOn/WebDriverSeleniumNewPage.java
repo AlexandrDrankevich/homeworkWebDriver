@@ -10,9 +10,10 @@ public class WebDriverSeleniumNewPage extends WebDriverSeleniumAbstractPage {
         super(webDriver);
     }
 
-    @FindBy(xpath = "//a[contains(text(),'Bash')]")
+    @FindBy(xpath = "//a[@class=\"btn -small h_800\"]")
     WebElement bash;
-
+    @FindBy(xpath ="//textarea[@class=\"textarea\"]")
+    WebElement textArea;
 
     public String searchTitleName() {
         System.out.println(webDriver.getTitle());
@@ -21,6 +22,13 @@ public class WebDriverSeleniumNewPage extends WebDriverSeleniumAbstractPage {
 
     public boolean SyntaxHighlighting() {
         if (bash.getText().contains("Bash")) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean checkCodeInput() {
+        if (textArea.getText().contains(code)) {
             return true;
         }
         return false;
