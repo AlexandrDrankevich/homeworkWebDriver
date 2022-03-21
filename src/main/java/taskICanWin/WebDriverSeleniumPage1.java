@@ -41,8 +41,8 @@ public class WebDriverSeleniumPage1 {
     }
 
     public WebDriverSeleniumPage1 pasteExpiration() {
-        ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", openSelectionExpiration);
-        new WebDriverWait(webDriver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(openSelectionExpiration)).click();
+      //  ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", openSelectionExpiration);
+        openSelectionExpiration.click();
         new WebDriverWait(webDriver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(pasteExpiration)).click();
         return this;
     }
